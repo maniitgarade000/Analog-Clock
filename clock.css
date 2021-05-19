@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock{
+    background:url("./clock.png");
+    height:300px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    position: relative;
+    border: 10px solid #fff;
+    box-shadow: inset 0px 0px 3px 1px  #00001f,1px 1px 2px 1px #00001f;
+}
+/* for the clock hands */
+
+ #seconds, #minutes, #hours{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+} 
+#seconds::before, #minutes::before, #hours::before{
+content: "";
+display: block;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -100%);
+border-radius: 30px;
+
+}
+#seconds::before{
+    height: 120px;
+    width: 1px;
+    color:#000;
+}
+#seconds::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 120px;
+    width: 1px;
+    background-color: #000;
+    transform: translate(-50%, -100%);
+}
+#minutes::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100px;
+    width: 2px;
+    background-color: #000;
+    transform: translate(-50%, -90%);
+}
+#hours::after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 70px;
+    width: 4px;
+    background-color: #000;
+    transform: translate(-50%, -80%);
+}
+#minutes::before{
+   height: 100px;
+   width: 2px;
+   color: #000;
+}
+#DigitalClock{
+    position: absolute;
+    left: 56%;
+    top:  60%;
+    font-weight: bold;
+    border-radius: 2px;
+    transform: translateY(-50%);
+    color: crimson;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px;
+}
+#hours{
+    z-index: 1;
+}
+#minutes{
+    z-index: 2;
+}
+#seconds{
+    z-index: 3;
+}
